@@ -4,7 +4,9 @@
 .vscode/launch.json
 .vscode/ipch
 .vscode/settings.json
+.vscode/extensions.json
 platformio-device-monitor*.log
 logs/device-monitor*.log
 platformio_override.ini
+data
 .DS_Store
