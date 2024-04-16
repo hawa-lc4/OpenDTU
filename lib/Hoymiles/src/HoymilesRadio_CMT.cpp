@@ -176,7 +176,7 @@ void HoymilesRadio_CMT::loop()
                 }
 
             } else {
-                Hoymiles.getMessageOutput()->println("Frame kaputt"); // ;-)
+                Hoymiles.getMessageOutput()->println("Frame broken"); // ;-)
             }
 
             // Remove paket from buffer even it was corrupted
