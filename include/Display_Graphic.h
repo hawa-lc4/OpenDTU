@@ -36,7 +36,7 @@ public:
     DisplayGraphicClass();
     ~DisplayGraphicClass();
 
-    void init(Scheduler& scheduler, const DisplayType_t type, const uint8_t data, const uint8_t clk, const uint8_t cs, const uint8_t reset);
+    void init(Scheduler& scheduler, const DisplayType_t type, const uint8_t data, const uint8_t clk, const uint8_t cs, const uint8_t reset, const uint8_t backlight);
     void setContrast(const uint8_t contrast);
     void setStatus(const bool turnOn);
     void setOrientation(const uint8_t rotation = DISPLAY_ROTATION);
@@ -67,6 +67,7 @@ private:
     DiagramMode_t _diagram_mode = DiagramMode_t::Off;
     uint8_t _display_language = DISPLAY_LANGUAGE;
     uint8_t _mExtra;
+    uint8_t _display_backlight;
     const uint16_t _period = 1000;
     const uint16_t _interval = 60000; // interval at which to power save (milliseconds)
     uint32_t _previousMillis = 0;

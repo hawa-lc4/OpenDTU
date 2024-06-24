@@ -65,6 +65,7 @@ void WebApiDeviceClass::onDeviceAdminGet(AsyncWebServerRequest* request)
     displayPinObj["clk"] = pin.display_clk;
     displayPinObj["cs"] = pin.display_cs;
     displayPinObj["reset"] = pin.display_reset;
+    displayPinObj["backlight"] = pin.display_backlight;
 
     auto ledPinObj = curPin["led"].to<JsonObject>();
     for (uint8_t i = 0; i < PINMAPPING_LED_COUNT; i++) {

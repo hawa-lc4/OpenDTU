@@ -123,7 +123,8 @@ void setup()
         pin.display_data,
         pin.display_clk,
         pin.display_cs,
-        pin.display_reset);
+        pin.display_reset,
+        pin.display_backlight);
     Display.setDiagramMode(static_cast<DiagramMode_t>(config.Display.Diagram.Mode));
     Display.setOrientation(config.Display.Rotation);
     Display.enablePowerSafe = config.Display.PowerSafe;
