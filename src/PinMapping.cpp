@@ -29,7 +29,7 @@
 #endif
 
 #ifndef DISPLAY_BACKLIGHT
-#define DISPLAY_BACKLIGHT 32U
+#define DISPLAY_BACKLIGHT 255U
 #endif
 
 #ifndef LED0
