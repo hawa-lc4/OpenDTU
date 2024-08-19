@@ -60,8 +60,10 @@ void DisplayGraphicClass::init(Scheduler& scheduler, const DisplayType_t type, c
         _display = constructor(reset, clk, data, cs);
         if (_display_type == DisplayType_t::ST7567_GM12864I_59N) {
             _display->setI2CAddress(0x3F << 1);
-            pinMode(_display_backlight, OUTPUT);
-            digitalWrite(_display_backlight, LOW);
+            if (_display_backlight <= 39) {
+                pinMode(_display_backlight, OUTPUT);
+                digitalWrite(_display_backlight, LOW);
+            }
         }
         _display->begin();
         setContrast(DISPLAY_CONTRAST);
@@ -285,11 +287,13 @@ void DisplayGraphicClass::loop()
     }
 
     _display->setPowerSave(displayPowerSave);
-    if (displayPowerSave == true) {
-        digitalWrite(_display_backlight, HIGH);
-    } else {
-        digitalWrite(_display_backlight, LOW);
-    }   
+    if (_display_backlight <= 39) {
+        if (displayPowerSave == true) {
+            digitalWrite(_display_backlight, HIGH);
+        } else {
+            digitalWrite(_display_backlight, LOW);
+        }
+    }
 }
 
 void DisplayGraphicClass::setContrast(const uint8_t contrast)
