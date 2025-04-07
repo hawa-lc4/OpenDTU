@@ -8,4 +8,5 @@
 platformio-device-monitor*.log
 logs/device-monitor*.log
 data
+playground
 .DS_Store
