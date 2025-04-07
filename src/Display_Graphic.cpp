@@ -64,10 +64,10 @@ void DisplayGraphicClass::init(Scheduler& scheduler)
 
     if (_display_type == DisplayType_t::ST7567_GM12864I_59N) {
         _display->setI2CAddress(0x3F << 1);
-        // if (_display_backlight <= 39) {                  // hawa-lc4: add display_backlight function
-        //     pinMode(_display_backlight, OUTPUT);
-        //     digitalWrite(_display_backlight, LOW);
-        // }
+        if (_display_backlight <= 39) {                  // hawa-lc4: add display_backlight function
+            pinMode(_display_backlight, OUTPUT);
+            digitalWrite(_display_backlight, LOW);
+        }
 }
 
     _display->begin();
