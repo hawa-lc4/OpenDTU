@@ -31,7 +31,7 @@
 #endif
 
 #ifndef DISPLAY_BACKLIGHT
-#define DISPLAY_BACKLIGHT 255U
+#define DISPLAY_BACKLIGHT GPIO_NUM_NC
 #endif
 
 #ifndef LED0
